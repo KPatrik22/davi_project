@@ -1,0 +1,48 @@
+table minifigs
+	lineageTag: 7a570dc2-b485-47ec-80b0-6f819d80a99f
+
+	column fig_num
+		dataType: string
+		lineageTag: beb76b4d-fb86-416a-a445-6124d68972f3
+		summarizeBy: none
+		sourceColumn: fig_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 08007c9c-1de1-4459-8b04-4e5d205dba4c
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column num_parts
+		dataType: int64
+		formatString: 0
+		lineageTag: f2ae2c22-4991-4046-8976-0232cdc159a9
+		summarizeBy: none
+		sourceColumn: num_parts
+
+		annotation SummarizationSetBy = Automatic
+
+	column img_url
+		dataType: string
+		lineageTag: 2b7eb5cb-73d6-4f49-bf57-a11c8be863a8
+		summarizeBy: none
+		sourceColumn: img_url
+
+		annotation SummarizationSetBy = Automatic
+
+	partition minifigs = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Acer\davi\legostarwarspowerbi-main\data\minifigs.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"fig_num", type text}, {"name", type text}, {"num_parts", Int64.Type}, {"img_url", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

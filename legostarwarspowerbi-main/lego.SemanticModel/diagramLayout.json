@@ -1,0 +1,152 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 317.56972867625853,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1137.3318498217882,
+            "y": 185.70676360104704
+          },
+          "nodeIndex": "themes",
+          "nodeLineageTag": "de7a4969-ccae-4c0f-88e2-e77b0b35e438",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1129.8624443710603,
+            "y": 498.08173489179956
+          },
+          "nodeIndex": "sets",
+          "nodeLineageTag": "679eb157-a271-44f8-94bd-bbba22d9cce5",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 86.972875026545466,
+            "y": 147.94649066419618
+          },
+          "nodeIndex": "minifigs",
+          "nodeLineageTag": "7a570dc2-b485-47ec-80b0-6f819d80a99f",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 498.43579850960191,
+            "y": 157.3229044844752
+          },
+          "nodeIndex": "inventory_minifigs",
+          "nodeLineageTag": "ecc67728-2feb-499d-9a9f-d87bd6ca8fae",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 496.17600446626648,
+            "y": 528.8498096332836
+          },
+          "nodeIndex": "inventory_sets",
+          "nodeLineageTag": "0d36b73b-e4ba-4430-b89a-ee60ac2bccf2",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 109.67157728571215,
+            "y": 921.03673478444159
+          },
+          "nodeIndex": "parts",
+          "nodeLineageTag": "19886511-9461-46b8-b5ae-747661a44add",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 493.41228222174084,
+            "y": 887.46743443444393
+          },
+          "nodeIndex": "inventory_parts",
+          "nodeLineageTag": "bddc577f-c3da-4dcd-8dbf-a491ed48ffb8",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1612.7447496473562,
+            "y": 470.21693608893571
+          },
+          "nodeIndex": "brickeconomy_starwars_eur",
+          "nodeLineageTag": "dfb95dc7-e8c6-464b-96f6-2f793e202d18",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1970.9089734895153,
+            "y": 208.53409474391933
+          },
+          "nodeIndex": "Table1",
+          "nodeLineageTag": "f5355457-1729-4bf7-ab0f-dabf15a611f2",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1620.8676799872264,
+            "y": 180.67557810365309
+          },
+          "nodeIndex": "Date",
+          "nodeLineageTag": "b2e262f2-28ea-475c-9697-d161c8e21cce",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 70.955543900968848,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

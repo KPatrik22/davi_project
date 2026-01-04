@@ -1,0 +1,259 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "bb99cbdead39b86b6592",
+  "position": {
+    "x": 295.47430653544575,
+    "y": 0,
+    "z": 0,
+    "height": 720.16718166717271,
+    "width": 984.36565631307269,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "legoSpiral352D1A5418054BD6AFE4A63220CCEB3A",
+    "query": {
+      "queryState": {
+        "date": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "brickeconomy_starwars_eur"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "YearMonthDate"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Year"
+                }
+              },
+              "queryRef": "brickeconomy_starwars_eur.YearMonthDate.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "YearMonthDate Year"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "brickeconomy_starwars_eur"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "YearMonthDate"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Quarter"
+                }
+              },
+              "queryRef": "brickeconomy_starwars_eur.YearMonthDate.Variation.Date Hierarchy.Quarter",
+              "nativeQueryRef": "YearMonthDate Quarter"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "brickeconomy_starwars_eur"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "YearMonthDate"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "brickeconomy_starwars_eur.YearMonthDate.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "YearMonthDate Month"
+            }
+          ]
+        },
+        "subtheme": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "brickeconomy_starwars_eur"
+                    }
+                  },
+                  "Property": "subtheme"
+                }
+              },
+              "queryRef": "brickeconomy_starwars_eur.subtheme",
+              "nativeQueryRef": "subtheme"
+            }
+          ]
+        },
+        "value": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "brickeconomy_starwars_eur"
+                        }
+                      },
+                      "Property": "event_value"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(brickeconomy_starwars_eur.event_value)",
+              "nativeQueryRef": "Sum of event_value"
+            }
+          ]
+        },
+        "eventName": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Table1"
+                    }
+                  },
+                  "Property": "Title"
+                }
+              },
+              "queryRef": "Table1.Title",
+              "nativeQueryRef": "Title"
+            }
+          ]
+        },
+        "eventDate": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Table1"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "YearMonthDateforMovies"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Year"
+                }
+              },
+              "queryRef": "Table1.YearMonthDateforMovies.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "YearMonthDateforMovies Year"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Table1"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "YearMonthDateforMovies"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Quarter"
+                }
+              },
+              "queryRef": "Table1.YearMonthDateforMovies.Variation.Date Hierarchy.Quarter",
+              "nativeQueryRef": "YearMonthDateforMovies Quarter"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Table1"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "YearMonthDateforMovies"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "Table1.YearMonthDateforMovies.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "YearMonthDateforMovies Month"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Secondhand Market Value In EUR of Star Wars Lego Sets by Theme from 2023 January until 2025 November and Star Wars movie releases in the same period'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,334 @@
+table brickeconomy_starwars_eur
+	lineageTag: dfb95dc7-e8c6-464b-96f6-2f793e202d18
+
+	column set_num
+		dataType: string
+		lineageTag: fe6d3657-e0e7-4e1f-86e2-87c7d7e5a395
+		summarizeBy: none
+		sourceColumn: set_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 00646883-6b81-488c-9c66-0891b200b1f3
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column theme
+		dataType: string
+		lineageTag: 86cb3339-c2cc-459c-a182-81b39779ff3e
+		summarizeBy: none
+		sourceColumn: theme
+
+		annotation SummarizationSetBy = Automatic
+
+	column subtheme
+		dataType: string
+		lineageTag: 2d7b2a79-0841-4af6-ae0a-a630fef8f79c
+		summarizeBy: none
+		sourceColumn: subtheme
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 0404315e-9f82-4251-b3cc-64788885582a
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column pieces_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b13dcc0-3005-4b97-88c9-5316380d14a5
+		summarizeBy: sum
+		sourceColumn: pieces_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column minifigs_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c036626-66cf-4918-a845-9be8806099ed
+		summarizeBy: sum
+		sourceColumn: minifigs_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column minifigs
+		dataType: string
+		lineageTag: 9dbfe0b2-0cf0-4ec7-b880-08a1b9e00c72
+		summarizeBy: none
+		sourceColumn: minifigs
+
+		annotation SummarizationSetBy = Automatic
+
+	column availability
+		dataType: string
+		lineageTag: c194a274-acf2-4685-94aa-7e9565617816
+		summarizeBy: none
+		sourceColumn: availability
+
+		annotation SummarizationSetBy = Automatic
+
+	column retail_price_us
+		dataType: double
+		lineageTag: 33db3345-838d-4deb-879e-5c3a00646b38
+		summarizeBy: sum
+		sourceColumn: retail_price_us
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column retail_price_uk
+		dataType: double
+		lineageTag: 1883b025-6e75-4a26-ab97-11d74318c613
+		summarizeBy: sum
+		sourceColumn: retail_price_uk
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column retail_price_ca
+		dataType: double
+		lineageTag: 23ad69d7-c853-4fe4-80b1-1bfca91dd4d7
+		summarizeBy: sum
+		sourceColumn: retail_price_ca
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column retail_price_eu
+		dataType: string
+		lineageTag: f14c8575-981a-46ea-8757-6f8dcc7c2af3
+		summarizeBy: none
+		sourceColumn: retail_price_eu
+
+		annotation SummarizationSetBy = Automatic
+
+	column retail_price_au
+		dataType: string
+		lineageTag: 83f5ae08-fe14-4b0e-8809-03119364e971
+		summarizeBy: none
+		sourceColumn: retail_price_au
+
+		annotation SummarizationSetBy = Automatic
+
+	column ean
+		dataType: int64
+		formatString: 0
+		lineageTag: 11be951b-5d5c-4b97-b9b0-a70ec334c962
+		summarizeBy: sum
+		sourceColumn: ean
+
+		annotation SummarizationSetBy = Automatic
+
+	column upc
+		dataType: int64
+		formatString: 0
+		lineageTag: 238229be-cae5-47d4-94b6-f553a1e23bc9
+		summarizeBy: sum
+		sourceColumn: upc
+
+		annotation SummarizationSetBy = Automatic
+
+	column released_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8470d556-f3c4-40a1-8f81-9a2cd7525d7f
+		summarizeBy: none
+		sourceColumn: released_date
+
+		variation Variation
+			isDefault
+			relationship: d8c0ae20-2bb3-4c7a-956d-2ecc17e321d6
+			defaultHierarchy: LocalDateTable_de612a45-d06f-4690-aab9-b419938c0900.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column retired_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 101ffa32-cf19-408c-80d2-2c0c16195aa9
+		summarizeBy: none
+		sourceColumn: retired_date
+
+		variation Variation
+			isDefault
+			relationship: a3fc90fa-96b1-4fcd-b99d-c1b775407fb6
+			defaultHierarchy: LocalDateTable_ee56973b-3670-45a1-aa1b-b34e5326656d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column retired
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 62b369d8-d72c-462f-98ce-67c30d62028b
+		summarizeBy: none
+		sourceColumn: retired
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_value_new
+		dataType: double
+		lineageTag: 9f614fa8-9884-406f-b1b9-a2fb00a7d4e9
+		summarizeBy: sum
+		sourceColumn: current_value_new
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column current_value_used
+		dataType: double
+		lineageTag: e97ea9d7-8e37-4702-acb0-5834771bedf0
+		summarizeBy: sum
+		sourceColumn: current_value_used
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column current_value_used_low
+		dataType: double
+		lineageTag: d614574c-d1ab-43a1-81b1-9851a2067955
+		summarizeBy: sum
+		sourceColumn: current_value_used_low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column current_value_used_high
+		dataType: double
+		lineageTag: 84221267-e729-486f-b3c9-7fd1cc45eedf
+		summarizeBy: sum
+		sourceColumn: current_value_used_high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column forecast_value_new_2_years
+		dataType: double
+		lineageTag: b622aea9-d0b2-4b9a-8269-1936ba92ff58
+		summarizeBy: sum
+		sourceColumn: forecast_value_new_2_years
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column forecast_value_new_5_years
+		dataType: double
+		lineageTag: 3b1b40f2-7026-497e-ae30-316d10400561
+		summarizeBy: sum
+		sourceColumn: forecast_value_new_5_years
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rolling_growth_lastyear
+		dataType: double
+		lineageTag: 576b2147-7013-430f-aa3d-d4b246280512
+		summarizeBy: sum
+		sourceColumn: rolling_growth_lastyear
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rolling_growth_12months
+		dataType: double
+		lineageTag: a2e79bb9-3749-4539-9ded-6707e718ee96
+		summarizeBy: sum
+		sourceColumn: rolling_growth_12months
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column currency
+		dataType: string
+		lineageTag: 065da3ec-68a1-46bb-9c98-fc7883276bdb
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_condition
+		dataType: string
+		lineageTag: c18dadc8-4f32-4127-897e-3fb64595b117
+		summarizeBy: none
+		sourceColumn: event_condition
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d978a8fe-f5e2-48e3-80af-89e8ef5bafc3
+		summarizeBy: none
+		sourceColumn: event_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column event_value
+		dataType: double
+		lineageTag: 3757855e-9dc2-4c40-a0e8-7efad60ed750
+		summarizeBy: sum
+		sourceColumn: event_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column YearMonthDate = ```
+			
+			DATE(
+			    YEAR ( 'brickeconomy_starwars_eur'[event_date] ),
+			    MONTH ( 'brickeconomy_starwars_eur'[event_date] ),
+			    1
+			)
+			
+			```
+		formatString: General Date
+		lineageTag: 4e2d02d5-a95a-46d7-8173-1b48153696b7
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 753132ea-0690-41d1-9835-e7927c92dc3f
+			defaultHierarchy: LocalDateTable_79c24644-7989-491e-81f8-6c4c893373ae.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition brickeconomy_starwars_eur = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Acer\davi\legostarwarspowerbi-main\data\brickeconomy_starwars_eur.csv"),[Delimiter=",", Columns=31, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"set_num", type text}, {"name", type text}, {"theme", type text}, {"subtheme", type text}, {"year", Int64.Type}, {"pieces_count", Int64.Type}, {"minifigs_count", Int64.Type}, {"minifigs", type text}, {"availability", type text}, {"retail_price_us", type number}, {"retail_price_uk", type number}, {"retail_price_ca", type number}, {"retail_price_eu", type text}, {"retail_price_au", type text}, {"ean", Int64.Type}, {"upc", Int64.Type}, {"released_date", type date}, {"retired_date", type date}, {"retired", type logical}, {"current_value_new", type number}, {"current_value_used", type number}, {"current_value_used_low", type number}, {"current_value_used_high", type number}, {"forecast_value_new_2_years", type number}, {"forecast_value_new_5_years", type number}, {"rolling_growth_lastyear", type number}, {"rolling_growth_12months", type number}, {"currency", type text}, {"event_condition", type text}, {"event_date", type date}, {"event_value", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

@@ -1,0 +1,67 @@
+relationship AutoDetected_e6046d15-9a1e-46d8-b1ad-5f730dce287a
+	fromColumn: inventory_minifigs.fig_num
+	toColumn: minifigs.fig_num
+
+relationship AutoDetected_1a9727bb-3598-491b-9727-f6bfa8344a2d
+	fromColumn: inventory_sets.set_num
+	toColumn: sets.set_num
+
+relationship AutoDetected_f7e42eda-83c0-4627-bbb9-d6ecbfce0fab
+	fromColumn: inventory_parts.part_num
+	toColumn: parts.part_num
+
+relationship 3354d0c6-29e6-1eb8-bc60-e3cab09c9fe9
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: inventory_minifigs.inventory_id
+	toColumn: inventory_sets.inventory_id
+
+relationship e21fc005-2108-1d50-6c1f-25fcfe233386
+	fromColumn: sets.theme_id
+	toColumn: themes.id
+
+relationship 03595cef-2d2b-8188-03be-77e5bc303c61
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: inventory_parts.inventory_id
+	toColumn: inventory_sets.inventory_id
+
+relationship d8c0ae20-2bb3-4c7a-956d-2ecc17e321d6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: brickeconomy_starwars_eur.released_date
+	toColumn: LocalDateTable_de612a45-d06f-4690-aab9-b419938c0900.Date
+
+relationship a3fc90fa-96b1-4fcd-b99d-c1b775407fb6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: brickeconomy_starwars_eur.retired_date
+	toColumn: LocalDateTable_ee56973b-3670-45a1-aa1b-b34e5326656d.Date
+
+relationship 96dabd9e-1c0c-f41b-dd6e-98a1fe53474c
+	fromColumn: brickeconomy_starwars_eur.set_num
+	toColumn: sets.set_num
+
+relationship 51451adb-7acd-44b9-9d54-7209b8660313
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Table1.Date
+	toColumn: LocalDateTable_d033bebc-c052-426c-86e7-cc24acb34f1e.Date
+
+relationship cde9834b-6987-5729-f2e3-86a2f425fc8b
+	fromColumn: brickeconomy_starwars_eur.event_date
+	toColumn: Date.Date
+
+relationship 2f2efbd4-72d9-f0e0-aba8-31ceb52906ed
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Date.Date
+	toColumn: Table1.Date
+
+relationship 753132ea-0690-41d1-9835-e7927c92dc3f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: brickeconomy_starwars_eur.YearMonthDate
+	toColumn: LocalDateTable_79c24644-7989-491e-81f8-6c4c893373ae.Date
+
+relationship 50d2f46e-ece9-4181-8d1b-2da03e75faff
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Table1.YearMonthDateforMovies
+	toColumn: LocalDateTable_91f2adc2-78be-4c56-a545-74680db855c7.Date
+

@@ -1,0 +1,66 @@
+table sets
+	lineageTag: 679eb157-a271-44f8-94bd-bbba22d9cce5
+
+	column set_num
+		dataType: string
+		lineageTag: c7b473a9-8f5b-44e5-bfb4-1f2f8325d39b
+		summarizeBy: none
+		sourceColumn: set_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 065f39b0-74cf-4198-a121-b0ab16049ad6
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: f978e777-3fc1-442b-899b-24397df30f03
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column theme_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4aba932e-8431-444d-b5ec-4141f27354c6
+		summarizeBy: none
+		sourceColumn: theme_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column num_parts
+		dataType: int64
+		formatString: 0
+		lineageTag: b5daa37f-96ab-4c36-ace7-a7995bd2a426
+		summarizeBy: sum
+		sourceColumn: num_parts
+
+		annotation SummarizationSetBy = Automatic
+
+	column img_url
+		dataType: string
+		lineageTag: 55ee27d5-4755-4836-8111-f7884cd0748c
+		summarizeBy: none
+		sourceColumn: img_url
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sets = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Acer\davi\legostarwarspowerbi-main\data\sets.csv"),[Delimiter=",", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"set_num", type text}, {"name", type text}, {"year", Int64.Type}, {"theme_id", Int64.Type}, {"num_parts", Int64.Type}, {"img_url", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

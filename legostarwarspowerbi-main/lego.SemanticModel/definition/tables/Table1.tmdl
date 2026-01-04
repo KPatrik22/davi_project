@@ -1,0 +1,67 @@
+table Table1
+	lineageTag: f5355457-1729-4bf7-ab0f-dabf15a611f2
+
+	column Title
+		dataType: string
+		lineageTag: 076cf736-3eae-4f37-ac93-0183f0e46728
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 86da7da0-8d41-4ae2-bdf2-537a4f8ab68e
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dd137698-7a34-4ee3-8f3c-38b0041c88a0
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 51451adb-7acd-44b9-9d54-7209b8660313
+			defaultHierarchy: LocalDateTable_d033bebc-c052-426c-86e7-cc24acb34f1e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column YearMonthDateforMovies = ```
+			
+			DATE(
+			    YEAR ( 'Table1'[Date] ),
+			    MONTH ( 'Table1'[Date] ),
+			    1
+			)
+			
+			```
+		formatString: General Date
+		lineageTag: afc2a70d-7c18-4e81-a560-3e79e01e15c0
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 50d2f46e-ece9-4181-8d1b-2da03e75faff
+			defaultHierarchy: LocalDateTable_91f2adc2-78be-4c56-a545-74680db855c7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Table1 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Acer\davi\legostarwarspowerbi-main\data\movies and games.xlsx"), null, true),
+				    Table1_Table = Source{[Item="Table1",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Table1_Table,{{"Title", type text}, {"Type", type text}, {"Date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

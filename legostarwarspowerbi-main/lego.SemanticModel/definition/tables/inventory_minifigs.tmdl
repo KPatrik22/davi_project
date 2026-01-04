@@ -1,0 +1,41 @@
+table inventory_minifigs
+	lineageTag: ecc67728-2feb-499d-9a9f-d87bd6ca8fae
+
+	column inventory_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a269312-84c9-4b7f-8940-64ff29ea40bd
+		summarizeBy: none
+		sourceColumn: inventory_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column fig_num
+		dataType: string
+		lineageTag: 558b5ac6-c0f9-436f-ad89-3ebf60a7d76c
+		summarizeBy: none
+		sourceColumn: fig_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 52d2f08f-cf1b-409c-aa64-006d782295dc
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition inventory_minifigs = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Acer\davi\legostarwarspowerbi-main\data\inventory_minifigs.csv"),[Delimiter=",", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"inventory_id", Int64.Type}, {"fig_num", type text}, {"quantity", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

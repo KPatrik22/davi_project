@@ -1,0 +1,80 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "87a0d88842ce0873acaa",
+  "position": {
+    "x": 43.410946607979056,
+    "y": 0,
+    "z": 0,
+    "height": 569.65793201899055,
+    "width": 1155.2627423837694,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "waterfallChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "brickeconomy_starwars_eur"
+                    }
+                  },
+                  "Property": "event_date"
+                }
+              },
+              "queryRef": "brickeconomy_starwars_eur.event_date",
+              "nativeQueryRef": "event_date Year",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "brickeconomy_starwars_eur"
+                        }
+                      },
+                      "Property": "event_value"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(brickeconomy_starwars_eur.event_value)",
+              "nativeQueryRef": "Sum of event_value"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "brickeconomy_starwars_eur"
+                  }
+                },
+                "Property": "event_date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

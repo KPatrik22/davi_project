@@ -1,0 +1,41 @@
+table inventory_sets
+	lineageTag: 0d36b73b-e4ba-4430-b89a-ee60ac2bccf2
+
+	column inventory_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 065b528f-d9c9-4a50-91ae-59a552cb9ce8
+		summarizeBy: none
+		sourceColumn: inventory_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_num
+		dataType: string
+		lineageTag: 92e24e04-93eb-414d-a84b-87186304674e
+		summarizeBy: none
+		sourceColumn: set_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: f80a5acc-41a1-41fd-87f4-a403f2635520
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition inventory_sets = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Acer\davi\legostarwarspowerbi-main\data\inventory_sets.csv"),[Delimiter=",", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"inventory_id", Int64.Type}, {"set_num", type text}, {"quantity", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

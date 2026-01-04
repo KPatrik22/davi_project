@@ -1,0 +1,48 @@
+table parts
+	lineageTag: 19886511-9461-46b8-b5ae-747661a44add
+
+	column part_num
+		dataType: string
+		lineageTag: acfa6b52-f336-4e96-98b4-ecc7c6255e8f
+		summarizeBy: none
+		sourceColumn: part_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 2071136c-c36d-4ed7-bcc8-2268155ae42b
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_cat_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b32e4be-dd0f-42d6-baa6-4ef98bba3571
+		summarizeBy: none
+		sourceColumn: part_cat_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_material
+		dataType: string
+		lineageTag: 94530495-2028-43c0-942d-203bf5170ca6
+		summarizeBy: none
+		sourceColumn: part_material
+
+		annotation SummarizationSetBy = Automatic
+
+	partition parts = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Acer\davi\legostarwarspowerbi-main\data\parts.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"part_num", type text}, {"name", type text}, {"part_cat_id", Int64.Type}, {"part_material", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

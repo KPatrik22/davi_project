@@ -1,0 +1,110 @@
+table Date
+	lineageTag: b2e262f2-28ea-475c-9697-d161c8e21cce
+
+	column Date
+		formatString: General Date
+		lineageTag: a5143cfc-24d0-4619-a52f-362a91c26fa1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: dedf7341-2911-4206-a6ac-92aaa57e4cb9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		formatString: 0
+		lineageTag: 7986f81f-72d4-45e9-bdc2-d116192dcf65
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		lineageTag: 98101d84-5b80-4f48-8f33-3973c527b76f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Short'
+		lineageTag: d83d7f00-e5ad-4e33-a4f6-f93fd703ce56
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Short]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year-Month
+		lineageTag: 2a19a3fb-c457-4664-89ec-f4c9da581dd2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year-Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		lineageTag: 08ed2492-fe9b-43bf-ace1-56f52e76c8f7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Number'
+		formatString: 0
+		lineageTag: 503a735f-acd8-4334-b813-139a9cf21d64
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Week Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		formatString: 0
+		lineageTag: bee69338-7242-4430-8946-127b95cc59ac
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Day]
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWeekend
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f82a8264-5c77-4d1a-80dc-a02030606a84
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [IsWeekend]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = calculated
+		mode: import
+		source = ```
+				
+				ADDCOLUMNS (
+				    CALENDAR (DATE(2022,1,1), DATE(2025,12,31)),
+				    "Year", YEAR ( [Date] ),
+				    "Month Number", MONTH ( [Date] ),
+				    "Month Name", FORMAT ( [Date], "MMMM" ),
+				    "Month Short", FORMAT ( [Date], "MMM" ),
+				    "Year-Month", FORMAT ( [Date], "YYYY-MM" ),
+				    "Quarter", "Q" & FORMAT ( [Date], "Q" ),
+				    "Week Number", WEEKNUM ( [Date], 2 ),
+				    "Day", DAY ( [Date] ),
+				    "IsWeekend", IF ( WEEKDAY( [Date], 2 ) > 5, TRUE(), FALSE() )
+				)
+				
+				```
+
+	annotation PBI_Id = 2d826d7a838c4ea0b4b68036e85d09ad
+

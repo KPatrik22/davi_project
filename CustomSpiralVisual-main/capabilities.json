@@ -1,0 +1,91 @@
+{
+    "dataRoles": [
+  {
+    "name": "subtheme",
+    "kind": "Grouping",
+    "displayName": "Subtheme"
+  },
+  {
+    "name": "date",
+    "kind": "Grouping",
+    "displayName": "Date"
+  },
+  {
+    "name": "eventDate",
+    "kind": "Grouping",
+    "displayName": "Event Date"
+  },
+  {
+    "name": "eventName",
+    "kind": "Grouping",
+    "displayName": "Event Name"
+  },
+  {
+    "name": "value",
+    "kind": "Measure",
+    "displayName": "Value"
+  }
+],
+    "dataViewMappings": [
+  {
+    "categorical": {
+        "categories": {
+        "select": [
+          { "for": { "in": "subtheme" } },
+          { "for": { "in": "date" } },
+          { "for": { "in": "eventName" } },
+          { "for": { "in": "eventDate" } }
+        ]
+      },
+      "values": {
+        "select": [
+          { "bind": { "to": "value" } }
+        ]
+      }
+    }
+  }
+],
+    "objects": {
+        "dataPoint": {
+            "properties": {
+                "defaultColor": {
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "showAllDataPoints": {
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "fill": {
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "fillRule": {
+                    "type": {
+                        "fill": {}
+                    }
+                },
+                 "fontSize": {
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    
+    "privileges": []
+}

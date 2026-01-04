@@ -1,0 +1,67 @@
+table inventory_parts
+	lineageTag: bddc577f-c3da-4dcd-8dbf-a491ed48ffb8
+
+	column inventory_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 62adf081-ba3b-438d-8abc-b66e304a2492
+		summarizeBy: none
+		sourceColumn: inventory_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_num
+		dataType: string
+		lineageTag: 2ab7cab2-b35c-4fa9-829c-11f55b3c0280
+		summarizeBy: none
+		sourceColumn: part_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column color_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c5064080-d8f1-4f6c-9a69-6919578b4303
+		summarizeBy: sum
+		sourceColumn: color_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ee3ae3e-3cb5-40ed-b19a-c9df22fc1e21
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_spare
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 78ba2bcc-3184-40e2-8416-0c0dddd29b25
+		summarizeBy: none
+		sourceColumn: is_spare
+
+		annotation SummarizationSetBy = Automatic
+
+	column img_url
+		dataType: string
+		lineageTag: a3b15745-7bcf-4e6e-b568-69af2c829651
+		summarizeBy: none
+		sourceColumn: img_url
+
+		annotation SummarizationSetBy = Automatic
+
+	partition inventory_parts = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Acer\davi\legostarwarspowerbi-main\data\inventory_parts.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"inventory_id", Int64.Type}, {"part_num", type text}, {"color_id", Int64.Type}, {"quantity", Int64.Type}, {"is_spare", type logical}, {"img_url", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

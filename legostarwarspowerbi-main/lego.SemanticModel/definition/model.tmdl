@@ -1,0 +1,33 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["themes","sets","minifigs","inventory_minifigs","inventory_sets","parts","inventory_parts","brickeconomy_starwars_eur","Table1"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table themes
+ref table sets
+ref table minifigs
+ref table inventory_minifigs
+ref table inventory_sets
+ref table parts
+ref table inventory_parts
+ref table brickeconomy_starwars_eur
+ref table DateTableTemplate_2b86c731-57c8-49f9-9011-56d38ff6a3a8
+ref table LocalDateTable_de612a45-d06f-4690-aab9-b419938c0900
+ref table LocalDateTable_ee56973b-3670-45a1-aa1b-b34e5326656d
+ref table Table1
+ref table LocalDateTable_d033bebc-c052-426c-86e7-cc24acb34f1e
+ref table Date
+ref table LocalDateTable_79c24644-7989-491e-81f8-6c4c893373ae
+ref table LocalDateTable_91f2adc2-78be-4c56-a545-74680db855c7
+
+ref cultureInfo en-US
+

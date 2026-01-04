@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0.0",
+  "author": {
+    "name": "barna",
+    "email": "barna"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/legoSpiral352D1A5418054BD6AFE4A63220CCEB3A.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "legoSpiral352D1A5418054BD6AFE4A63220CCEB3A",
+    "name": "legoSpiral",
+    "displayName": "legoSpiral",
+    "version": "1.0.0.0",
+    "description": "yes",
+    "supportUrl": "asd",
+    "gitHubUrl": "",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}
